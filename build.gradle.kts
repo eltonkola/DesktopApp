@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.compose)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.compose.hot.reload)
 }
 
@@ -14,10 +15,15 @@ repositories {
 
 dependencies {
     implementation(compose.desktop.currentOs)
+    implementation(libs.compose.desktop)
     implementation(libs.compose.material3)
     implementation(libs.compose.resources)
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.kotlin.coroutines.swing)
+
+    implementation(libs.kotlinx.serialization)
+    implementation(libs.androidx.lifecycle.viewmodelCompose)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
 
     implementation(libs.compose.ui.tooling)
     testImplementation(libs.kotlin.test)
@@ -25,8 +31,7 @@ dependencies {
 
 kotlin {
     jvmToolchain(21)
-    
-    // Required for Compose
+
     sourceSets.all {
         languageSettings {
             languageVersion = "2.0"
