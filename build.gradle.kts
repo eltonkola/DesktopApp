@@ -1,14 +1,11 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
-    kotlin("jvm") version "2.2.21"
-    id("org.jetbrains.compose") version "1.10.0-beta01"
-    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20"
-    id("org.jetbrains.compose.hot-reload") version "1.0.0-rc02"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.compose)
+    alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.compose.hot.reload)
 }
-
-group = "com.eltonkola.desktop"
-version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -17,23 +14,32 @@ repositories {
 
 dependencies {
     implementation(compose.desktop.currentOs)
-    implementation("org.jetbrains.compose.material3:material3:1.9.0-beta03")
-    implementation("org.jetbrains.compose.components:components-resources:1.10.0-beta01")
-    implementation("org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose:2.9.5")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.10.2")
+    implementation(libs.compose.material3)
+    implementation(libs.compose.resources)
+    implementation(libs.lifecycle.runtime.compose)
+    implementation(libs.kotlin.coroutines.swing)
 
-    implementation("org.jetbrains.compose.ui:ui-tooling-preview:1.10.0-beta01")
-    
-    testImplementation(kotlin("test"))
+    implementation(libs.compose.ui.tooling)
+    testImplementation(libs.kotlin.test)
 }
 
 kotlin {
     jvmToolchain(21)
+    
+    // Required for Compose
+    sourceSets.all {
+        languageSettings {
+            languageVersion = "2.0"
+        }
+    }
 }
 
 tasks.test {
     useJUnitPlatform()
 }
+
+group = "com.eltonkola.desktop"
+version = "1.0-SNAPSHOT"
 
 compose.desktop {
     application {
