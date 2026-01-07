@@ -1,4 +1,4 @@
-package com.eltonkola.desktop
+package com.eltonkola.desktop.chat.data
 
 import io.ktor.client.*
 import io.ktor.client.call.*
@@ -12,6 +12,7 @@ import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
 import java.util.concurrent.atomic.AtomicLong
 
 /**
@@ -23,7 +24,7 @@ object AiClient {
 
     private val httpClient = HttpClient(CIO) {
         install(ContentNegotiation) {
-            json(kotlinx.serialization.json.Json {
+            json(Json {
                 ignoreUnknownKeys = true
                 isLenient = true
             })

@@ -7,6 +7,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import com.eltonkola.desktop.chat.ChatScreen
 import com.eltonkola.desktop.desktopapp.generated.resources.Res
 import com.eltonkola.desktop.desktopapp.generated.resources.desktop_computer
 import org.jetbrains.compose.resources.painterResource
