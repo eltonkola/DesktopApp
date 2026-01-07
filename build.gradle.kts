@@ -11,6 +11,9 @@ plugins {
 repositories {
     mavenCentral()
     google()
+    maven("https://packages.jetbrains.team/maven/p/kpm/public/")
+    maven("https://cache-redirector.jetbrains.com/intellij-repository/releases")
+    maven("https://cache-redirector.jetbrains.com/intellij-dependencies")
 }
 
 dependencies {
@@ -33,11 +36,11 @@ dependencies {
     implementation("com.composables:icons-lucide-cmp:+")
 
     val jewelVersion = "0.33.0-253.29795"
-    implementation("org.jetbrains.jewel:jewel-int-ui-standalone:$jewelVersion"){
-        isTransitive = false
-    }
+    implementation("org.jetbrains.jewel:jewel-int-ui-standalone:$jewelVersion")
     implementation("org.jetbrains.jewel:jewel-int-ui-decorated-window:$jewelVersion")
 
+    implementation("com.jetbrains.intellij.platform:icons:253.29346.145")
+    
     
 
     implementation(libs.compose.ui.tooling)
