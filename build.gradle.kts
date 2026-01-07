@@ -16,7 +16,6 @@ repositories {
 dependencies {
     implementation(compose.desktop.currentOs)
     implementation(libs.compose.desktop)
-    implementation(libs.compose.material3)
     implementation(libs.compose.resources)
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.kotlin.coroutines.swing)
@@ -24,6 +23,22 @@ dependencies {
     implementation(libs.kotlinx.serialization)
     implementation(libs.androidx.lifecycle.viewmodelCompose)
     implementation(libs.androidx.lifecycle.runtimeCompose)
+
+
+    implementation("io.ktor:ktor-client-core:2.3.7")
+    implementation("io.ktor:ktor-client-cio:2.3.7") 
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
+    
+    implementation("com.composables:icons-lucide-cmp:+")
+
+    val jewelVersion = "0.33.0-253.29795"
+    implementation("org.jetbrains.jewel:jewel-int-ui-standalone:$jewelVersion"){
+        isTransitive = false
+    }
+    implementation("org.jetbrains.jewel:jewel-int-ui-decorated-window:$jewelVersion")
+
+    
 
     implementation(libs.compose.ui.tooling)
     testImplementation(libs.kotlin.test)

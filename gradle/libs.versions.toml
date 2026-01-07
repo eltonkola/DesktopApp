@@ -4,13 +4,11 @@ compose = "1.9.3"
 composeHotReload = "1.0.0"
 lifecycle = "2.9.5"
 coroutines = "1.10.2"
-material3 = "1.9.0-beta03"
 kotlinx-serialization = "1.6.0"
 androidx-lifecycle = "2.9.6"
 
 [libraries]
 compose-desktop = { module = "org.jetbrains.compose.desktop:desktop-jvm", version.ref = "compose" }
-compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
 compose-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose" }
 compose-ui-tooling = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "compose" }
 androidx-lifecycle-viewmodelCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
