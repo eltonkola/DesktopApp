@@ -51,7 +51,7 @@ fun InputArea(
                 modifier = Modifier.fillMaxWidth()
                     .shadow(2.dp, RoundedCornerShape(12.dp)),
                 shape = RoundedCornerShape(12.dp),
-                color = JewelTheme.globalColors.panelBackground.copy(alpha = 0.8f)
+                color = JewelTheme.globalColors.panelBackground
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
