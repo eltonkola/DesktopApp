@@ -1,5 +1,6 @@
 package com.eltonkola.desktop
 
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -27,6 +28,7 @@ import org.jetbrains.jewel.window.styling.TitleBarStyle
 import org.jetbrains.skiko.SystemTheme
 import org.jetbrains.skiko.currentSystemTheme
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun App(
     exitApplication: () -> Unit
@@ -35,7 +37,8 @@ fun App(
         JewelLogger.getInstance("StandaloneSample").info("Starting Jewel Standalone sample")
 
         var darkTheme by mutableStateOf(currentSystemTheme == SystemTheme.DARK)
-
+        var panelOpened by mutableStateOf(true)
+    
         IntUiTheme(
             theme = if (darkTheme) {
                 JewelTheme.darkThemeDefinition()
@@ -68,13 +71,21 @@ fun App(
                     false
                 },
                 content = {
-                    //TitleBarView()
-
+                    TitleBarView(
+                        darkTheme = darkTheme,
+                        panelOpened = panelOpened,
+                        switchTheme = {
+                            darkTheme = !darkTheme
+                        },
+                        onSidebarClick = {
+                            panelOpened = !panelOpened
+                        }
+                    )
                     Surface(
                         modifier = Modifier.fillMaxSize(),
                         color = JewelTheme.globalColors.panelBackground
                     ) {
-                        ChatScreen()
+                        ChatScreen(panelOpened)
                     }
                 },
             )

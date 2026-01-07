@@ -1,5 +1,6 @@
 package com.eltonkola.desktop.chat
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.*
@@ -13,7 +14,9 @@ import org.jetbrains.jewel.ui.component.Divider
 
 
 @Composable
-fun ChatScreen() {
+fun ChatScreen(
+    panelOpened : Boolean
+) {
     var chats by remember { mutableStateOf(emptyList<Chat>()) }
     var selectedChatId by remember { mutableStateOf<String?>(null) }
 
@@ -42,18 +45,22 @@ fun ChatScreen() {
     }
 
     Row(modifier = Modifier.fillMaxSize()) {
-        ChatSidebar(
-            chats = chats,
-            selectedChatId = selectedChatId,
-            onChatSelected = { chatId -> selectedChatId = chatId },
-            onNewChat = onNewChat
-        )
-
-        Divider(
-            color = JewelTheme.globalColors.borders.normal,
-            orientation = Orientation.Vertical
-        )
-
+       // if(panelOpened) {
+            AnimatedVisibility(panelOpened) {
+                ChatSidebar(
+                    chats = chats,
+                    selectedChatId = selectedChatId,
+                    onChatSelected = { chatId -> selectedChatId = chatId },
+                    onNewChat = onNewChat
+                )
+            }
+        AnimatedVisibility(panelOpened) {
+            Divider(
+                color = JewelTheme.globalColors.borders.normal,
+                orientation = Orientation.Vertical
+            )
+        }
+      //  }
         if (selectedChatId != null) {
             val selectedChat = chats.find { it.id == selectedChatId }
             if (selectedChat != null) {

@@ -29,6 +29,8 @@ import org.jetbrains.jewel.ui.component.Icon
 import org.jetbrains.jewel.ui.component.IconButton
 import org.jetbrains.jewel.ui.component.Text
 import org.jetbrains.jewel.ui.icons.AllIconsKeys
+import java.awt.Desktop
+import java.net.URI
 
 @Composable
 fun SidebarFooter() {
@@ -78,7 +80,7 @@ fun SidebarFooter() {
             }
 
             IconButton(
-                onClick = { /* Settings */ },
+                onClick =   { Desktop.getDesktop().browse(URI.create("https://github.com/eltonkola")) },
                 modifier = Modifier.size(32.dp)
             ) {
                 Icon(
