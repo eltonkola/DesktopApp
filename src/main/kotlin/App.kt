@@ -6,6 +6,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.eltonkola.desktop.chat.ChatScreen
@@ -36,8 +37,8 @@ fun App(
     
         JewelLogger.getInstance("StandaloneSample").info("Starting Jewel Standalone sample")
 
-        var darkTheme by mutableStateOf(currentSystemTheme == SystemTheme.DARK)
-        var panelOpened by mutableStateOf(true)
+    var darkTheme by remember { mutableStateOf(currentSystemTheme == SystemTheme.DARK) }
+    var panelOpened by remember { mutableStateOf(true) }
     
         IntUiTheme(
             theme = if (darkTheme) {
@@ -48,16 +49,15 @@ fun App(
             styling =
                 ComponentStyling.default()
                     .decoratedWindow(
-                        titleBarStyle =
-                            if (darkTheme) {
-                                TitleBarStyle.light()
-                            } else {
-                                TitleBarStyle.dark()
-                            },
-                        windowStyle = if (darkTheme) {
-                            DecoratedWindowStyle.light()
+                        titleBarStyle = if (darkTheme) {
+                            TitleBarStyle.dark() 
                         } else {
+                            TitleBarStyle.light() 
+                        },
+                        windowStyle = if (darkTheme) {
                             DecoratedWindowStyle.dark()
+                        } else {
+                            DecoratedWindowStyle.light()
                         },
                     ),
             swingCompatMode = true,
@@ -66,10 +66,6 @@ fun App(
                 onCloseRequest = { exitApplication() },
                 title = "Desktop Ai",
                 icon = painterResource(Res.drawable.desktop_computer),
-                onKeyEvent = { keyEvent ->
-                    //  processKeyShortcuts(keyEvent = keyEvent, onNavigateTo = MainViewModel::onNavigateTo)
-                    false
-                },
                 content = {
                     TitleBarView(
                         darkTheme = darkTheme,

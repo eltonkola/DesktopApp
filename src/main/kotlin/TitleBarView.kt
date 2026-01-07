@@ -79,10 +79,10 @@ fun DecoratedWindowScope.TitleBarView(
                 }
             ) {
                 IconButton(
-                    {
+                    onClick = { 
                         switchTheme()
                     },
-                    Modifier.size(40.dp).padding(5.dp),
+                    modifier = Modifier.size(40.dp).padding(5.dp)
                 ) {
                     if (!darkTheme) {
                         Icon(
