@@ -22,11 +22,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.jetbrains.jewel.foundation.theme.JewelTheme
 import org.jetbrains.jewel.ui.component.Icon
+import org.jetbrains.jewel.ui.component.IconButton
 import org.jetbrains.jewel.ui.component.Text
 import org.jetbrains.jewel.ui.icons.AllIconsKeys
 
 @Composable
-fun ChatListItem(chat: Chat, isSelected: Boolean, onClick: () -> Unit) {
+fun ChatListItem(
+    chat: Chat, 
+    isAlone: Boolean,
+    isSelected: Boolean, 
+    onClick: () -> Unit,
+    onDelete: (() -> Unit)? = null
+) {
     val backgroundColor by animateColorAsState(
         targetValue = if (isSelected)
             JewelTheme.globalColors.text.normal.copy(alpha = 0.12f)
@@ -79,6 +86,19 @@ fun ChatListItem(chat: Chat, isSelected: Boolean, onClick: () -> Unit) {
                             color = JewelTheme.globalColors.text.disabled
                         ),
                         modifier = Modifier.padding(top = 2.dp)
+                    )
+                }
+            }
+            
+            if (isSelected && onDelete != null && !isAlone) {
+                IconButton(
+                    onClick = { onDelete() },
+                    modifier = Modifier.size(20.dp)
+                ) {
+                    Icon(
+                        AllIconsKeys.General.Delete,
+                        contentDescription = "Delete Chat",
+                        tint = JewelTheme.globalColors.text.error
                     )
                 }
             }

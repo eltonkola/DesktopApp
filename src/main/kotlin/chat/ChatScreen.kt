@@ -51,7 +51,13 @@ fun ChatScreen(
                     chats = chats,
                     selectedChatId = selectedChatId,
                     onChatSelected = { chatId -> selectedChatId = chatId },
-                    onNewChat = onNewChat
+                    onNewChat = onNewChat,
+                    onDeleteChat = { chatId ->
+                        chats = chats.filter { it.id != chatId }
+                        if (selectedChatId == chatId) {
+                            selectedChatId = chats.firstOrNull()?.id
+                        }
+                    }
                 )
             }
         AnimatedVisibility(panelOpened) {

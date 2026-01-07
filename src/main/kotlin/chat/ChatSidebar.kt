@@ -21,7 +21,8 @@ fun ChatSidebar(
     chats: List<Chat>,
     selectedChatId: String?,
     onChatSelected: (String) -> Unit,
-    onNewChat: () -> Unit
+    onNewChat: () -> Unit,
+    onDeleteChat: (String) -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -52,8 +53,10 @@ fun ChatSidebar(
             items(chats) { chat ->
                 ChatListItem(
                     chat = chat,
+                    isAlone = chats.size == 1,
                     isSelected = chat.id == selectedChatId,
-                    onClick = { onChatSelected(chat.id) }
+                    onClick = { onChatSelected(chat.id) },
+                    onDelete = { onDeleteChat(chat.id) }
                 )
             }
         }
