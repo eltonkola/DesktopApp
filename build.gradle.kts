@@ -50,9 +50,9 @@ dependencies {
     implementation(libs.jna.platform)
 
     // Logging
+    implementation("co.touchlab:kermit:2.0.3")
     implementation(libs.slf4j.api)
     implementation(libs.slf4j.simple)
-
     // Testing
     testImplementation(libs.kotlin.test)
 }
@@ -106,6 +106,10 @@ compose.desktop {
                     extra["CFBundleDisplayName"] = appDisplayName
                     extra["CFBundleName"] = appDisplayName
                     extra["CFBundleGetInfoString"] = appDisplayName
+                }
+                signing {
+                    sign.set(true)
+                    identity.set("") // Empty for ad-hoc
                 }
             }
 

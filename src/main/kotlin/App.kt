@@ -9,6 +9,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import co.touchlab.kermit.Logger
 import com.eltonkola.desktop.chat.ChatScreen
 import com.eltonkola.desktop.desktopapp.generated.resources.Res
 import com.eltonkola.desktop.desktopapp.generated.resources.logo
@@ -94,6 +95,8 @@ fun App(
 
 
 class AppViewModel : ViewModel() {
+
+    val logger = Logger.withTag("AppViewModel")
     private val _darkTheme = MutableStateFlow(currentSystemTheme == SystemTheme.DARK)
     val darkTheme: StateFlow<Boolean> = _darkTheme.asStateFlow()
 
@@ -101,14 +104,17 @@ class AppViewModel : ViewModel() {
     val panelOpened: StateFlow<Boolean> = _panelOpened.asStateFlow()
 
     init {
-        JewelLogger.getInstance("StandaloneSample").info("Starting Jewel Standalone sample")
+        //JewelLogger.getInstance("StandaloneSample").info("Starting Jewel Standalone sample")
+        logger.i { "started" }
     }
 
     fun toggleTheme() {
+        logger.i { "toggleTheme" }
         _darkTheme.value = !_darkTheme.value
     }
 
     fun togglePanel() {
+        logger.i { "togglePanel" }
         _panelOpened.value = !_panelOpened.value
     }
 
