@@ -51,7 +51,7 @@ dependencies {
 
     // Logging
     implementation(libs.slf4j.api)
-    runtimeOnly(libs.slf4j.simple)
+    implementation(libs.slf4j.simple)
 
     // Testing
     testImplementation(libs.kotlin.test)
@@ -83,10 +83,10 @@ compose.desktop {
         // JVM arguments for all platforms
         jvmArgs += listOf(
             "-Dfile.encoding=UTF-8",
-            "-Xmx512m", // Max heap size
-            "-Xms128m", // Initial heap size
-            "-XX:+UseG1GC", // Use G1 garbage collector for better performance
-            "-XX:MaxGCPauseMillis=200" // Target max GC pause time
+//            "-Xmx512m", // Max heap size
+//            "-Xms128m", // Initial heap size
+//            "-XX:+UseG1GC", // Use G1 garbage collector for better performance
+//            "-XX:MaxGCPauseMillis=200" // Target max GC pause time
         )
 
         nativeDistributions {
@@ -101,22 +101,12 @@ compose.desktop {
             macOS {
                 iconFile.set(project.file("icons/icon.icns"))
                 bundleID = "com.eltonkola.desktop"
-                // Require macOS 11.0 or later for better compatibility
-                minimumSystemVersion = "11.0"
 
                 infoPlist {
                     extra["CFBundleDisplayName"] = appDisplayName
                     extra["CFBundleName"] = appDisplayName
                     extra["CFBundleGetInfoString"] = appDisplayName
-                    extra["LSMinimumSystemVersion"] = "11.0"
-                    extra["NSHighResolutionCapable"] = true
                 }
-
-                // macOS-specific JVM args
-                jvmArgs += listOf(
-                    "-Dapple.awt.application.appearance=system", // Follow system theme
-                    "-Dapple.awt.application.name=$appDisplayName"
-                )
             }
 
             windows {
@@ -125,7 +115,7 @@ compose.desktop {
                 upgradeUuid = "33FED4E9-7E0D-44D9-8DB5-12AC69AEADB6"
                 msiPackageVersion = "1.0.0"
                 perUserInstall = true
-                dirChooser = true // Allow user to choose installation directory
+                dirChooser = true
 
                 // Windows-specific JVM args
                 jvmArgs += listOf(
