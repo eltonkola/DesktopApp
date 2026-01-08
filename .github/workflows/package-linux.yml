@@ -18,7 +18,6 @@ jobs:
 
       - name: Build Deb
         run: |
-          cd EltonKola_Web
           chmod +x gradlew  
           ./gradlew packageDeb
 
