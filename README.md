@@ -1,10 +1,11 @@
 # Compose Desktop Template
 
 A modern, cross-platform desktop application template built with Jetpack Compose Multiplatform.
-I created it casue from time to time i create small desktop apps/utilities for personal use, and getting started is too much boildertemplate and copy paste.
+
+This template was created to simplify the process of starting new desktop applications, eliminating the need for repetitive boilerplate code and setup.
 
 ## Screenshots
-
+This is a simple demo app that mimics the ui/ux on an ai chat app, and uses apifreellm.com free api to showcase the interaction. It uses a mix of compose and jewels components, with icons from Lucide and jewels itself. It uses jewels theme, and supports dark and light mode. 
 ![Screenshot 1](images/screenshot1.png)
 *Main application window*
 
@@ -66,13 +67,15 @@ The workflow triggers on pushes to the `main` branch and on new releases.
 - Kotlinx Serialization
 - SLF4J for logging
 
-## Customize It
+## Customization
 
-Feel free to:
-- Remove libraries you don't need (like Ktor or ViewModel)
-- Add new ones (like Koin or Coil)
-- Create your own icons and replace the sample ones in the `icons` folder
-  - Use services like [CloudConvert](https://cloudconvert.com/png-to-icns) to generate `.icns` and `.ico` files
+### Dependencies
+- Remove unused libraries (e.g., Ktor, ViewModel)
+- Add new dependencies as needed (e.g., Koin, Coil)
+
+### Icons
+- Replace the sample icons in the `icons` folder with your own
+- Use [CloudConvert](https://cloudconvert.com/png-to-icns) to generate `.icns` and `.ico` files
 
 ## License
 
