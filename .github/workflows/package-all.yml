@@ -1,18 +1,29 @@
-name: Build And Deploy
+name: Package All Platforms
 
 on:
   workflow_dispatch:
 
 jobs:
+  prepare-project:
+    name: Prepare Project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
   build-linux:
-    needs: [prepare-project]
+    needs: prepare-project
     uses: ./.github/workflows/package-linux.yml
+    secrets: inherit
 
   build-windows:
-    needs: [prepare-project]
+    needs: prepare-project
     uses: ./.github/workflows/package-windows.yml
+    secrets: inherit
 
   build-macos:
-    needs: [prepare-project]
+    needs: prepare-project
     uses: ./.github/workflows/package-macos.yml
+    secrets: inherit
