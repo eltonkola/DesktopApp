@@ -1,45 +1,123 @@
-.gradle
+# Gradle files
+.gradle/
 build/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+!gradle/wrapper/gradle-wrapper.properties
+!gradle/libs.versions.toml
 
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
+# IntelliJ IDEA
+.idea/
 *.iml
 *.ipr
+*.iws
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-### Kotlin ###
-.kotlin
+# Kotlin
+.kotlin/
+.kotlin-*
 
-### Eclipse ###
-.apt_generated
+# Build outputs
+build/
+dist/
+bin/
+
+# Local configuration files
+*.properties
+*.kts
+!gradle.properties
+!gradlew
+!gradlew.bat
+
+# Logs and reports
+logs/
+*.log
+/build/reports/
+/build/test-results/
+/build/performance/
+/build/distributions/
+/build/tmp/
+/buildSrc/build/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Virtual Machine crash logs
+hs_err_pid*
+replay_pid*
+
+# IDE specific files
+.vscode/
+.settings/
+.project
 .classpath
 .factorypath
-.project
-.settings
 .springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+.sts4-cache/
+.apt_generated/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Build tool specific files
+.micronaut/
+.vertx/
 
-### VS Code ###
-.vscode/
+# Local development environment
+local.properties
+.env
 
-### Mac OS ###
-.DS_Store
+# Native build files
+*.dll
+*.so
+*.dylib
+*.o
+*.obj
+
+# Executables
+*.exe
+*.dll
+*.bin
+*.sh
+
+# Testing
+.idea_test/
+.idea_workspace/
+
+# Package files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tar.gz
+*.tar.xz
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local development
+.idea/
+*.iml
+*.ipr
+*.iws

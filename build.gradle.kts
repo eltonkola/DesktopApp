@@ -17,33 +17,41 @@ repositories {
 }
 
 dependencies {
+    // Compose
     implementation(compose.desktop.currentOs)
     implementation(libs.compose.desktop)
     implementation(libs.compose.resources)
-    implementation(libs.lifecycle.runtime.compose)
+    implementation(libs.compose.ui.tooling)
+    
+    // Coroutines
     implementation(libs.kotlin.coroutines.swing)
-
+    
+    // Serialization
     implementation(libs.kotlinx.serialization)
+    
+    // ViewModel
     implementation(libs.androidx.lifecycle.viewmodelCompose)
     implementation(libs.androidx.lifecycle.runtimeCompose)
-
-
-    implementation("io.ktor:ktor-client-core:2.3.7")
-    implementation("io.ktor:ktor-client-cio:2.3.7") 
-    implementation("io.ktor:ktor-client-content-negotiation:2.3.7")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
     
-    implementation("com.composables:icons-lucide-cmp:+")
-
-    val jewelVersion = "0.33.0-253.29795"
-    implementation("org.jetbrains.jewel:jewel-int-ui-standalone:$jewelVersion")
-    implementation("org.jetbrains.jewel:jewel-int-ui-decorated-window:$jewelVersion")
-
-    implementation("com.jetbrains.intellij.platform:icons:253.29346.145")
+    // Ktor
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.cio)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
     
+    // UI Components
+    implementation(libs.lucide.icons)
+    implementation(libs.jewel.ui)
+    implementation(libs.jewel.window)
+    implementation(libs.intellij.icons)
     
-
-    implementation(libs.compose.ui.tooling)
+    // Logging
+    implementation(libs.slf4j.api)
+    implementation(libs.slf4j.simple)
+    implementation(libs.jna)
+    implementation(libs.jna.platform)
+    
+    // Testing
     testImplementation(libs.kotlin.test)
 }
 
