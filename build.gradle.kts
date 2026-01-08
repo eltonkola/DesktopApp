@@ -107,10 +107,6 @@ compose.desktop {
                     extra["CFBundleName"] = appDisplayName
                     extra["CFBundleGetInfoString"] = appDisplayName
                 }
-                signing {
-                    sign.set(true)
-                    identity.set("") // Empty for ad-hoc
-                }
             }
 
             windows {
