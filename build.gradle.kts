@@ -83,7 +83,7 @@ compose.desktop {
             description = "Compose Dekstop App"
             copyright = "© 2026 Elton Kola. All rights reserved."
             vendor = "Example vendor"
-            licenseFile.set(project.file("LICENSE.txt"))
+            licenseFile.set(project.file("LICENSE"))
             macOS {
                 iconFile.set(project.file("icons/icon.icns"))
             }
