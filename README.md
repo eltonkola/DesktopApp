@@ -45,6 +45,20 @@ This template includes a simple demo app that mimics the UI/UX of an AI chat app
 2. Open the project in IntelliJ IDEA or Android Studio
 3. Run the application using the Gradle task: `run`
 
+## Downloads
+
+[![Build Status](https://github.com/eltonkola/DesktopApp/actions/workflows/package-all.yml/badge.svg?branch=main)](https://github.com/eltonkola/DesktopApp/actions/workflows/package-all.yml)
+
+Latest development builds are available from GitHub Actions:
+
+- **Windows**: [Download .msi](https://nightly.link/eltonkola/DesktopApp/workflows/package-all/main/app.msi.zip)
+- **macOS**: [Download .dmg](https://nightly.link/eltonkola/DesktopApp/workflows/package-all/main/app.dmg.zip)
+- **Linux**: [Download .deb](https://nightly.link/eltonkola/DesktopApp/workflows/package-all/main/app.deb.zip)
+
+> 💡 [View all artifacts from the latest build](https://github.com/eltonkola/DesktopApp/actions?query=workflow%3Apackage-all)
+> 
+> Note: You'll need to unzip the downloaded files before installing.
+
 ## Building
 
 ### Local Build

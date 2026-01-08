@@ -1,6 +1,8 @@
 name: Package All Platforms
 
 on:
+  push:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
