@@ -72,6 +72,19 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "com.eltonkola.desktop"
             packageVersion = "1.0.0"
+            description = "Compose Dekstop App"
+            copyright = "© 2026 Elton Kola. All rights reserved."
+            vendor = "Example vendor"
+            licenseFile.set(project.file("LICENSE.txt"))
+            macOS {
+                iconFile.set(project.file("icons/icon.icns"))
+            }
+            windows {
+                iconFile.set(project.file("icons/icon.ico"))
+            }
+            linux {
+                iconFile.set(project.file("icons/icon.png"))
+            }
         }
     }
 }

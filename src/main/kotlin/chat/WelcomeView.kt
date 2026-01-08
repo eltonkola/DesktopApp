@@ -21,7 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.eltonkola.desktop.desktopapp.generated.resources.Res
-import com.eltonkola.desktop.desktopapp.generated.resources.desktop_computer
+import com.eltonkola.desktop.desktopapp.generated.resources.logo
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.jewel.foundation.theme.JewelTheme
 import org.jetbrains.jewel.ui.component.Text
@@ -50,7 +50,7 @@ fun WelcomeView() {
             contentAlignment = Alignment.Center
         ) {
             Icon(
-                painterResource(Res.drawable.desktop_computer),
+                painterResource(Res.drawable.logo),
                 contentDescription = null,
                 tint = Color.White,
                 modifier = Modifier.size(40.dp)

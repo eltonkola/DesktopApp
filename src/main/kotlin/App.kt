@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.eltonkola.desktop.chat.ChatScreen
 import com.eltonkola.desktop.desktopapp.generated.resources.Res
-import com.eltonkola.desktop.desktopapp.generated.resources.desktop_computer
+import com.eltonkola.desktop.desktopapp.generated.resources.logo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -67,7 +67,7 @@ fun App(
         DecoratedWindow(
             onCloseRequest = { exitApplication() },
             title = "Desktop Ai",
-            icon = painterResource(Res.drawable.desktop_computer),
+            icon = painterResource(Res.drawable.logo),
             content = {
                 TitleBarView(
                     darkTheme = darkTheme,

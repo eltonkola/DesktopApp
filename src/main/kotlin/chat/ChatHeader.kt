@@ -13,7 +13,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.eltonkola.desktop.desktopapp.generated.resources.Res
-import com.eltonkola.desktop.desktopapp.generated.resources.desktop_computer
+import com.eltonkola.desktop.desktopapp.generated.resources.logo
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.jewel.foundation.theme.JewelTheme
 import org.jetbrains.jewel.ui.component.Text
@@ -32,7 +32,7 @@ fun ChatHeader() {
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Image(
-                painter = painterResource(Res.drawable.desktop_computer),
+                painter = painterResource(Res.drawable.logo),
                 contentDescription = null,
                 modifier = Modifier.size(32.dp),
                 //  tint = JewelTheme.globalColors.text.info
