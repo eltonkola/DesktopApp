@@ -1,4 +1,4 @@
-name: Build Windows
+name: Package Windows
 
 on:
   workflow_call:

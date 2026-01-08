@@ -4,8 +4,14 @@ A modern, cross-platform desktop application template built with Jetpack Compose
 
 This template was created to simplify the process of starting new desktop applications, eliminating the need for repetitive boilerplate code and setup.
 
-## Screenshots
-This is a simple demo app that mimics the ui/ux on an ai chat app, and uses apifreellm.com free api to showcase the interaction. It uses a mix of compose and jewels components, with icons from Lucide and jewels itself. It uses jewels theme, and supports dark and light mode. 
+## Demo
+
+This template includes a simple demo app that mimics the UI/UX of an AI chat application, showcasing:
+- Integration with [apifreellm.com](https://apifreellm.com) free API
+- Modern UI built with Compose and JetBrains Jewel components
+- Support for both dark and light themes
+- Custom icons from Lucide and Jewel
+
 ![Screenshot 1](images/screenshot1.png)
 *Main application window*
 
@@ -20,16 +26,22 @@ This is a simple demo app that mimics the ui/ux on an ai chat app, and uses apif
 - 📦 Packaged as native installers for all platforms
 - 🎨 Uses JetBrains Jewel UI components for a polished look
 - 🔄 Hot reload for faster development
+- 🌓 Dark and light theme support
+- 🚀 Optimized for performance and minimal resource usage
 
 ## Prerequisites
 
-- JDK 17 or higher
+- JDK 17 or higher ([Download](https://adoptium.net/))
 - IntelliJ IDEA (recommended) or Android Studio
 - Gradle 8.0 or higher
+- macOS 10.14+ / Windows 10+ / Linux (64-bit)
 
 ## Getting Started
 
 1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/compose-desktop-template.git
+   ```
 2. Open the project in IntelliJ IDEA or Android Studio
 3. Run the application using the Gradle task: `run`
 
@@ -43,11 +55,15 @@ This is a simple demo app that mimics the ui/ux on an ai chat app, and uses apif
 
 ### Create Distributables
 
+Build platform-specific packages:
+
 ```bash
 ./gradlew packageDmg        # macOS
 ./gradlew packageMsi        # Windows
 ./gradlew packageDeb        # Linux (Debian/Ubuntu)
 ```
+
+> **Note**: The build process will automatically include required JDK modules. To optimize the final binary size, unused JDK modules are excluded based on your application's requirements.
 
 ## CI/CD
 
@@ -61,21 +77,43 @@ The workflow triggers on pushes to the `main` branch and on new releases.
 
 ## Dependencies
 
-- Jetpack Compose Multiplatform
-- JetBrains Jewel UI
-- Ktor for networking
-- Kotlinx Serialization
-- SLF4J for logging
+- Jetpack Compose Multiplatform (1.5.0)
+- JetBrains Jewel UI (0.9.0)
+- Ktor Client (2.3.0) for networking
+- Kotlinx Serialization (1.5.0)
+- SLF4J (2.0.7) for logging
 
 ## Customization
 
 ### Dependencies
-- Remove unused libraries (e.g., Ktor, ViewModel)
-- Add new dependencies as needed (e.g., Koin, Coil)
+- Remove unused libraries (e.g., Ktor, ViewModel) to reduce binary size
+- Add new dependencies as needed (e.g., Koin for DI, Coil for image loading)
 
-### Icons
+### Icons & Assets
 - Replace the sample icons in the `icons` folder with your own
-- Use [CloudConvert](https://cloudconvert.com/png-to-icns) to generate `.icns` and `.ico` files
+- Recommended tools:
+  - [CloudConvert](https://cloudconvert.com/png-to-icns) for generating `.icns` (macOS) and `.ico` (Windows) files
+  - [Figma](https://figma.com) for designing custom UI assets
+
+## Troubleshooting
+
+- If you encounter Gradle issues, try:
+  ```bash
+  ./gradlew --stop
+  ./gradlew clean
+  ```
+- For build errors, ensure you have the correct JDK version set in your IDE
+- Check the [GitHub Issues](https://github.com/yourusername/your-repo/issues) for known issues and solutions
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Acknowledgments
+
+- Built with ❤️ using [Jetpack Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform/)
+- UI components powered by [JetBrains Jewel](https://github.com/JetBrains/jewel)
+- Icons by [Lucide](https://lucide.dev/)
 
 ## License
 

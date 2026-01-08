@@ -80,7 +80,7 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "com.eltonkola.desktop"
+            packageName = appDisplayName
             packageVersion = "1.0.0"
             description = appDisplayName
             copyright = "© 2026 Elton Kola. All rights reserved."
@@ -124,23 +124,17 @@ compose.desktop {
             }
             appResourcesRootDir.set(project.layout.projectDirectory.dir("resources"))
             modules(
-                // REQUIRED for all Java apps
-                "java.base",
-
-                // REQUIRED for Compose Desktop UI
-                "java.desktop",
-
-                // REQUIRED for Ktor HTTP client (ktor-client-cio)
-                "java.net.http",
-                "jdk.crypto.ec",
-
-                // REQUIRED for Jewel UI (IntelliJ theme)
-                "jdk.accessibility",
-
-                // REQUIRED for JNA (native access)
-                "jdk.unsupported",
+                "jdk.accessibility"
+                ,"java.logging"
+                ,"jdk.crypto.ec"
+                ,"java.desktop"
+                ,"java.net.http"
+                ,"jdk.unsupported"
+                ,"java.datatransfer"
+                ,"java.prefs"
+                ,"java.xml"
+                ,"java.base"
             )
-
         }
     }
 }
